@@ -1,0 +1,18 @@
+#!/bin/bash
+#SBATCH --job-name="jupyter-notebook"
+#SBATCH --output="jupyter-notebook.%j.%N.out"
+#SBATCH --partition=compute
+#SBATCH --nodes=1
+## **Warning**: remove the reservation if using this before or after the class
+#SBATCH --reservation=SI2018DAY2
+#SBATCH --ntasks-per-node=24
+#SBATCH --export=ALL
+#SBATCH --time=04:00:00
+
+module load singularity
+
+SINGULARITY_IMAGE="/oasis/scratch/comet/zonca/temp_project/ubuntu_anaconda_2018.simg"
+COMMAND="/opt/conda/bin/jupyter lab --no-browser --ip=*"
+export SINGULARITY_BINDPATH="/oasis"
+
+singularity exec $SINGULARITY_IMAGE $COMMAND
