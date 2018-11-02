@@ -4,7 +4,7 @@
 #SBATCH --partition=compute
 #SBATCH --nodes=1
 ## **Warning**: remove the reservation if using this before or after the class
-#SBATCH --reservation=SI2018DAY2
+#SBATCH --reservation=UCRES
 #SBATCH --ntasks-per-node=24
 #SBATCH --export=ALL
 #SBATCH --time=04:00:00
