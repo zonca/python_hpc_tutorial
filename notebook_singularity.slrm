@@ -3,8 +3,6 @@
 #SBATCH --output="jupyter-notebook.%j.%N.out"
 #SBATCH --partition=compute
 #SBATCH --nodes=1
-## **Warning**: remove the reservation if using this before or after the class
-#SBATCH --reservation=UCRES
 #SBATCH --ntasks-per-node=24
 #SBATCH --export=ALL
 #SBATCH --time=04:00:00
