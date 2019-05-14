@@ -10,7 +10,7 @@
 module load singularity
 
 SINGULARITY_IMAGE="/oasis/scratch/comet/zonca/temp_project/zonca-singularity-comet-master-2019-05.simg"
-COMMAND="/opt/conda/bin/jupyter lab --no-browser --ip=0.0.0.0"
+COMMAND="/opt/conda/bin/jupyter lab --no-browser --ip=$(hostname)"
 export SINGULARITY_BINDPATH="/oasis"
 
 singularity exec $SINGULARITY_IMAGE $COMMAND
